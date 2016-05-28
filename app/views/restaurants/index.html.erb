@@ -3,11 +3,11 @@
 <% @restaurants.each do |restaurant| %>
 
 <div class="row">
-  <div class="well well-lg">
-    <div class="restaurant-title">
+  <div class="card">
+    <h4 class="card-title">
       <%= link_to restaurant.name, restaurant_path(restaurant) %>
-    </div>
-    <div class="restaurant-body">
+    </h4>
+    <div class="card-text">
       <ul>
         <li>Location: <%= restaurant.location %></li>
         <li>Cuisine: <%= restaurant.cuisine %></li>
