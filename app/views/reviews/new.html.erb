@@ -1,6 +1,6 @@
-<h1>Write a review for </h1>
+<h1>Write a review for <%= @restaurant.name %></h1>
 
-<%= form_for(@review) do |f| %>
+<%= form_for [@restaurant, @review] do |f| %>
   <div class="form-group">
     <%= f.label :comment %>
     <%= f.text_area :comment, class: "form-control" %>

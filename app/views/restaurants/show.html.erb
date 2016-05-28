@@ -7,4 +7,4 @@
   <li><%= @restaurant.cuisine %></li>
 </ul>
 
-<p><%= link_to "Write review", new_review_path, class: "btn btn-primary btn-lg" %></p>
+<p><%= link_to "Write review", new_restaurant_review_path(@restaurant), class: "btn btn-primary btn-lg" %></p>
