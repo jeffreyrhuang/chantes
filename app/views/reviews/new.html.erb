@@ -1,0 +1,16 @@
+<h1>Write a review for </h1>
+
+<%= form_for(@review) do |f| %>
+  <div class="form-group">
+    <%= f.label :comment %>
+    <%= f.text_area :comment, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :rating %>
+    <%= f.text_field :rating, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

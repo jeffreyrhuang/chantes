@@ -1,0 +1,10 @@
+<h1>Restaurant show page</h1>
+
+<h2><%= @restaurant.name %></h2>
+
+<ul>
+  <li><%= @restaurant.location %></li>
+  <li><%= @restaurant.cuisine %></li>
+</ul>
+
+<p><%= link_to "Write review", new_review_path, class: "btn btn-primary btn-lg" %></p>
