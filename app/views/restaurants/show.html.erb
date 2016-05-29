@@ -8,3 +8,9 @@
 </ul>
 
 <p><%= link_to "Write review", new_restaurant_review_path(@restaurant), class: "btn btn-primary btn-lg" %></p>
+
+<% if @restaurant.reviews.any? %>
+  <ol class="reviews">
+    <%= render @reviews %>
+  </ol>
+<% end %>

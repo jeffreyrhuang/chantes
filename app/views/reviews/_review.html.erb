@@ -1,0 +1,5 @@
+<li id="review-<%= review.id %>">
+  <span><%= review.user.email %></span>
+  <span><%= review.content %></span>
+  <span>Posted <%= time_ago_in_words(review.created_at) %> ago</span>
+</li>

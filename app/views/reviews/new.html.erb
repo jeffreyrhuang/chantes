@@ -1,5 +1,7 @@
 <h1>Write a review for <%= @restaurant.name %></h1>
 
+<%= render 'shared/errors', obj: @review %>
+
 <%= form_for [@restaurant, @review] do |f| %>
   <div class="form-group">
     <%= f.label :content %>
