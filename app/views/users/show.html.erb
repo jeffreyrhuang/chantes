@@ -1,2 +1,19 @@
+
+<h2>Your Profile</h2>
 <%= @user.email %>
 
+<% if @user.reviews.any? %>
+  <h2>Your reviews:</h2>
+  <div class="col-sm-8 col-sm-offset-2">
+    <ol class="user-reviews">
+      <% @user.reviews.each do |review| %>
+      <li class="card card-block">
+        <span class="pull-xs-left"><%= review.rating %></span>
+        <small class="pull-xs-right">Posted <%= time_ago_in_words(review.created_at) %> ago</small>
+        <br>
+        <p class="card-text"><%= review.content %></p>
+      </li>
+      <% end %>
+    </ol>
+    </div>
+<% end %>
