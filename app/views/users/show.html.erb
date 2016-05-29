@@ -1,4 +1,4 @@
-
+<div class="row">
 <h2>Your Profile</h2>
 <%= @user.email %>
 
@@ -12,8 +12,16 @@
         <small class="pull-xs-right">Posted <%= time_ago_in_words(review.created_at) %> ago</small>
         <br>
         <p class="card-text"><%= review.content %></p>
+        <div class="review-actions">
+          <%= link_to "Edit", '#', class: "btn btn-sm btn-primary" %>
+          <%= link_to "Delete", restaurant_review_path(review.restaurant_id, review), method: :delete,
+                            data: { confirm: "Are you sure you want to delete the review?"},
+                            class: "btn btn-sm btn-danger" %>
+        </div>
       </li>
       <% end %>
     </ol>
     </div>
 <% end %>
+
+</div>

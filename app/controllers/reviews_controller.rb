@@ -10,6 +10,10 @@ class ReviewsController < ApplicationController
 
   end
 
+  def edit
+
+  end
+
   def create
     @review = current_user.reviews.build(review_params)
     @review.restaurant_id = params[:restaurant_id]
@@ -21,6 +25,12 @@ class ReviewsController < ApplicationController
       # if form is not valid then app crashes
       render 'new'
     end
+  end
+
+  def destroy
+    Review.find(params[:id]).destroy
+    flash[:success] = 'Review successfully deleted'
+    redirect_to user_path(current_user)
   end
 
   private
