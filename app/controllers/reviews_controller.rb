@@ -16,7 +16,14 @@ class ReviewsController < ApplicationController
   end
 
   def update
-    
+    @review = Review.find(params[:id])
+    @restaurant = Restaurant.find(@review.restaurant_id)
+    if @review.update(review_params)
+      flash[:success] = "Review was successfully edited"
+      redirect_to user_path(current_user)
+    else
+      render 'edit'
+    end
   end
 
   def create
