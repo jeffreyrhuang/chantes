@@ -15,6 +15,10 @@ class ReviewsController < ApplicationController
     @restaurant = Restaurant.find(@review.restaurant_id)
   end
 
+  def update
+    
+  end
+
   def create
     @review = current_user.reviews.build(review_params)
     @review.restaurant_id = params[:restaurant_id]
