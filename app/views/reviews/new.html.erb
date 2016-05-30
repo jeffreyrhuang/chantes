@@ -1,18 +1,3 @@
 <h1>Write a review for <%= @restaurant.name %></h1>
 
-<%= render 'shared/errors', obj: @review %>
-
-<%= form_for [@restaurant, @review] do |f| %>
-  <div class="form-group">
-    <%= f.label :content %>
-    <%= f.text_area :content, class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :rating %>
-    <%= f.text_field :rating, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.submit class: "btn btn-primary" %>
-  </div>
-<% end %>
+<%= render 'form' %>

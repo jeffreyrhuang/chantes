@@ -11,7 +11,8 @@ class ReviewsController < ApplicationController
   end
 
   def edit
-
+    @review = Review.find(params[:id])
+    @restaurant = Restaurant.find(@review.restaurant_id)
   end
 
   def create
