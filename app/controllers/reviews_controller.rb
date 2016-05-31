@@ -34,7 +34,7 @@ class ReviewsController < ApplicationController
       # fix redirect
       redirect_to root_path
     else
-      # if form is not valid then app crashes
+      @restaurant = Restaurant.find(params[:restaurant_id])
       render 'new'
     end
   end
