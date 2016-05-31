@@ -9,4 +9,17 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+
+end
+
+class ActionController::TestCase
+  include Devise::TestHelpers
+end
+
+class ActionDispatch::IntegrationTest
+  def sign_in(user)
+    post user_session_path \
+      "user[email]"    => user.email,
+      "user[password]" => '123greetings'
+  end
 end
