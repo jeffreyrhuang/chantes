@@ -39,6 +39,7 @@ group :test do
   gem 'minitest-reporters'
   gem 'mini_backtrace'
   gem 'guard-minitest'
+  gem 'minitest-rails-capybara'
 end
 
 group :production do

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class UsersProfileTest < ActionDispatch::IntegrationTest
+class UsersProfileTest < Capybara::Rails::TestCase
   
   # def setup
   #   @user = users(:archer)
