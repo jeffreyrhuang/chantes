@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.3.0'
+
 gem 'rails', '4.2.6'
 gem 'devise'
 gem 'bootstrap', '~> 4.0.0.alpha3'
@@ -33,6 +35,7 @@ group :test do
   gem 'mini_backtrace'
   gem 'guard-minitest'
   gem 'minitest-rails-capybara'
+  gem 'rspec-rails'
 end
 
 group :production do
