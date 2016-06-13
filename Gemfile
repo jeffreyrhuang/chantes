@@ -18,11 +18,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'faker'
 gem 'geocoder'
 gem 'pg'
-
+gem 'haml'
 
 
 group :development, :test do
   gem 'byebug'
+  gem 'mailcatcher'
 end
 
 group :development do
