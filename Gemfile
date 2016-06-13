@@ -15,11 +15,11 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'faker'
 gem 'geocoder'
+gem 'pg'
 
 
 
 group :development, :test do
-  gem 'sqlite3'
   gem 'byebug'
 end
 
@@ -36,6 +36,5 @@ group :test do
 end
 
 group :production do
-  gem 'pg'
   gem 'rails_12factor'
 end
