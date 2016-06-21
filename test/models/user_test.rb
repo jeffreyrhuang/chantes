@@ -16,11 +16,4 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
   end
 
-  test 'associated reviews should be destroyed' do
-    @user.save
-    @user.reviews.create!(content: 'lorem ipsum', restaurant: @restaurant)
-    assert_difference 'Review.count', -1 do
-      @user.destroy
-    end
-  end
 end

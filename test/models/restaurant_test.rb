@@ -9,7 +9,7 @@ class RestaurantTest < ActiveSupport::TestCase
 
   test 'associated reviews should be destroyed' do
     @restaurant.save
-    @restaurant.reviews.create!(content: 'lorem ipsum', user: @user)
+    @restaurant.reviews.create!(content: 'lorem ipsum', rating: 3, user: @user)
     assert_difference 'Review.count', -1 do
       @restaurant.destroy
     end

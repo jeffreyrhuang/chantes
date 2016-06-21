@@ -16,26 +16,26 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'faker'
 gem 'geocoder'
 gem 'slim'
 
-
-group :development, :test do
-  gem 'byebug'
-  gem 'mailcatcher'
-end
 
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
 
-group :test do
-  gem 'minitest-reporters'
-  gem 'mini_backtrace'
-  gem 'minitest-rails-capybara'
+group :development, :test do
+  gem 'byebug'
+  gem 'mailcatcher'
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'faker'
+end
+
+group :test do
+  gem 'minitest-rails-capybara'
+  gem 'capybara'
 end
 
 group :production do
