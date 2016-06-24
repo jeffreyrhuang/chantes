@@ -1,0 +1,28 @@
+.row
+  nav.navbar.navbar-dark.bg-inverse
+    button.navbar-toggler.hidden-sm-up[type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2"]
+      |  ☰ 
+    #exCollapsingNavbar2.collapse.navbar-toggleable-xs
+      = link_to 'Chantes.cr', root_path, class: 'navbar-brand'
+      ul.nav.navbar-nav
+        li.nav-item
+          = link_to 'About', about_path, class: 'nav-link'
+        li.nav-item
+          = link_to 'Restaurants', restaurants_path, class: 'nav-link'
+        li.nav-item
+          = link_to 'Add restaurant', new_restaurant_path, class: 'nav-link'
+      ul.nav.navbar-nav.pull-xs-right
+        - if user_signed_in?
+          li.nav-item.dropdown
+            a#dropdownMenu1.dropdown-toggle.nav-link[type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"]
+              | Account
+            .dropdown-menu[aria-labelledby="dropdownMenu1"]
+              = link_to "Profile", current_user, class: 'dropdown-item'
+              = link_to "Settings", '#', class: 'dropdown-item'
+              .dropdown-divider
+              = link_to "Log out", destroy_user_session_path, method: "delete", class: 'dropdown-item'
+        - else
+          li.nav-item
+            = link_to 'Log In', new_user_session_path, class: 'nav-link'
+          li.nav-item
+            = link_to 'Sign Up', new_user_registration_path, class: 'nav-link'

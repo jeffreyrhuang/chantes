@@ -1,0 +1,12 @@
+.row
+  .col-sm-6
+    h2 Restaurants
+    ul.restaurants
+      - @restaurants.each do |restaurant|
+        li
+          .card.card-block
+            h5.card-title
+              = link_to restaurant.name, restaurant_path(restaurant)
+            .card-text
+              | Location: #{restaurant.location} <br>
+              | Cuisine: #{restaurant.cuisine}

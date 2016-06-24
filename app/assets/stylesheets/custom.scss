@@ -1,6 +1,10 @@
 // @import "bootstrap-sprockets";
 // @import "bootstrap";
 
+body {
+  padding-bottom: 4em;
+}
+
 #error_explanation {
   color: red;
   ul {
@@ -14,11 +18,29 @@
   width: 700px;
 }
 
+
+// Restaurant index
+
+.restaurants {
+  list-style: none;
+  margin-top: 2em;
+  li {
+    margin: 1em 0;
+    .card-block {
+      padding: 2em;
+    }
+    .card-texts {
+      padding-left: 2em;
+    }
+  }
+}
+
+
+// Footer
+
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
-  margin: 0;
-  padding: 0;
   width: 100%;
   border-top: 1px solid #eaeaea;
   height: 60px;
