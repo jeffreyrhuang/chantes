@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160601181110) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "restaurants", force: :cascade do |t|
     t.string   "name"
     t.string   "location"
@@ -32,9 +35,9 @@ ActiveRecord::Schema.define(version: 20160601181110) do
     t.integer  "restaurant_id"
   end
 
-  add_index "reviews", ["restaurant_id"], name: "index_reviews_on_restaurant_id"
-  add_index "reviews", ["user_id", "created_at"], name: "index_reviews_on_user_id_and_created_at"
-  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
+  add_index "reviews", ["restaurant_id"], name: "index_reviews_on_restaurant_id", using: :btree
+  add_index "reviews", ["user_id", "created_at"], name: "index_reviews_on_user_id_and_created_at", using: :btree
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -51,7 +54,9 @@ ActiveRecord::Schema.define(version: 20160601181110) do
     t.datetime "updated_at",                          null: false
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "reviews", "restaurants"
+  add_foreign_key "reviews", "users"
 end

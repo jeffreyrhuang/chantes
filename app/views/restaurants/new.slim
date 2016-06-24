@@ -1,0 +1,17 @@
+h1[align="center"]
+  | Add a Restaurant
+.row
+  .col-sm-4.col-sm-offset-4
+    = form_for(@restaurant, :html => {class: "form-horizontal", role: "form"}) do |f|
+      = render 'shared/errors', object: f.object
+      .form-group
+        = f.label :name
+        = f.text_field :name, class: "form-control"
+      .form-group
+        = f.label :location
+        = f.text_field :location, class: "form-control"
+      .form-group
+        = f.label :cuisine
+        = f.select(:cuisine, options_for_select([['Chinese', 'Chinese'], ['Italian', 'Italian'],['BBQ / Grill', 'BBQ / Grill'],['Costa Rican', 'Costa Rican']]), {}, {class: "form-control"})
+      .form-group
+        = f.submit class: "btn btn-primary"
