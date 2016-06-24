@@ -36,7 +36,6 @@ group :development, :test do
 end
 
 group :test do
-  gem 'minitest-rails-capybara'
   gem 'capybara'
   gem 'database_cleaner'
   gem 'faker'
