@@ -1,0 +1,10 @@
+= form_for [@restaurant, @review] do |f|
+  = render 'shared/errors', object: f.object
+  .form-group
+    = f.label :content
+    = f.text_area :content, class: "form-control"
+  .form-group
+    = f.label :rating
+    = f.text_field :rating, class: "form-control"
+  .form-group
+    = f.submit class: "btn btn-primary"

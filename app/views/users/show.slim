@@ -1,0 +1,22 @@
+.row
+  h2 align='center' Your Profile
+  .col-sm-8.col-sm-offset-2
+    - if @user.reviews.any?
+      h2 Your reviews:
+      ol.user-reviews
+        - @user.reviews.each do |review|
+          li.card.card-block
+            span.pull-xs-left
+              = review.rating
+            small.pull-xs-right
+              | Posted 
+              = time_ago_in_words(review.created_at)
+              |  ago
+            br
+            p.card-text
+              = review.content
+            .review-actions
+              = link_to "Edit", edit_restaurant_review_path(review.restaurant_id, review), class: "btn btn-sm btn-primary"
+              = link_to "Delete", restaurant_review_path(review.restaurant_id, review), method: :delete,
+                                           data: { confirm: "Are you sure you want to delete the review?"},
+                                           class: "btn btn-sm btn-danger"
