@@ -1,0 +1,9 @@
+li id="review-#{review.id}" class='review-box'
+  .row
+    .col-sm-4
+      = review.user.email
+    .col-sm-8
+      .row
+        = review.rating
+      .row
+        = review.content
