@@ -11,7 +11,9 @@
 
     .row.visuals
       .col-sm-offset-2.col-sm-4
-        p map goes here
+        #map
+          = map(:center => { :latlng => [9.976733, -84.0088699], :zoom => 18 }) 
+
       .col-sm-6
         p pics go here
 

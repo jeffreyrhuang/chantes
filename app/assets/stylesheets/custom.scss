@@ -50,6 +50,9 @@ $navbar-border-color: #177e5d;
   width: 100%;
   .visuals {
     margin-top: 5em;
+    #map {
+      height: 200px;
+    }
   }
 }
 

@@ -19,6 +19,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'geocoder'
 gem 'slim'
 gem 'font-awesome-rails'
+gem 'leaflet-rails'
 
 
 group :development do
