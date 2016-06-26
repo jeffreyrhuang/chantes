@@ -13,11 +13,6 @@ $navbar-border-color: #177e5d;
   }
 }
 
-#map_canvas {
-  height: 500px;
-  width: 700px;
-}
-
 // Navbar
 
 .navbar {
@@ -27,6 +22,9 @@ $navbar-border-color: #177e5d;
 
 // Home
 
+#map {
+  height: 600px;
+}
 
 // Restaurant index
 

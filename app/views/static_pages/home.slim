@@ -1,3 +1,8 @@
 .row
   .col-sm-8.col-sm-offset-2
     h1 Welcome to Chantes.cr
+    #map
+
+javascript:
+  L.mapbox.accessToken = '';
+  var map = L.mapbox.map('map', 'mapbox.streets').setView([9.976733, -84.0088699], 16);
