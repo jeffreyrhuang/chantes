@@ -10,9 +10,11 @@
           = link_to "Write review", new_restaurant_review_path(@restaurant), class: "btn btn-primary btn-lg"
 
     .row.visuals
-      .col-sm-offset-2.col-sm-4
-        #map
-          = map(:center => { :latlng => [9.976733, -84.0088699], :zoom => 18 }) 
+      .col-sm-offset-1.col-sm-3
+        #map-show
+          = map(:center => { :latlng => [9.976733, -84.0088699], :zoom => 17 },
+                :markers => [ {:latlng => [9.976733, -84.0088699] } ],
+                :container_id => 'map-show' )
 
       .col-sm-6
         p pics go here

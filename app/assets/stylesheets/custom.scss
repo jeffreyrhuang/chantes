@@ -41,6 +41,11 @@ $navbar-border-color: #177e5d;
   }
 }
 
+// Restaurant new
+
+#map-new {
+  height: 500px;
+}
 
 // Restaurant show
 
@@ -50,7 +55,7 @@ $navbar-border-color: #177e5d;
   width: 100%;
   .visuals {
     margin-top: 5em;
-    #map {
+    #map-show {
       height: 200px;
     }
   }
