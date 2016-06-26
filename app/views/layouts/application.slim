@@ -8,7 +8,6 @@ html lang="en"
     meta http-equiv="x-ua-compatible" content="ie=edge"
     title Chantes.cr
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
-    script src="http://maps.googleapis.com/maps/api/js?key=#{Rails.application.secrets.google_api}&libraries=places"
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body

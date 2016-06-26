@@ -2,10 +2,4 @@ h1 Welcome to Chantes.cr
 p Find out about the places near you!
 .row
   .col-sm-6.col-sm-offset-3
-    .input-group
-      form
-        input#geocomplete.form-control[type="text" placeholder="Search for..." autocomplete="off"]
-        input#find.form-control.btn.btn-primary[type="button" value="find"]
-        #map_canvas
-script
-  |  $(document).ready(function(){ $('#geocomplete').geocomplete({ map: '#map_canvas' }); $('#find').click(function(){ $('#geocomplete').trigger('geocode'); }); }); 
+    
