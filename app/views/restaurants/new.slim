@@ -1,7 +1,7 @@
 h1[align="center"]
   | Add a Restaurant
 .row
-  .col-sm-4.col-sm-offset-1
+  .col-sm-3.col-sm-offset-1
     = form_for(@restaurant, :html => {class: "form-horizontal", role: "form"}) do |f|
       = render 'shared/errors', object: f.object
       .form-group
@@ -14,10 +14,24 @@ h1[align="center"]
         = f.label :cuisine
         = f.select(:cuisine, options_for_select([['Chinese', 'Chinese'], ['Italian', 'Italian'],['BBQ / Grill', 'BBQ / Grill'],['Costa Rican', 'Costa Rican']]), {}, {class: "form-control"})
       .form-group
+        = f.label :latitude
+        = f.text_field :latitude, class: 'form-control', id: 'latitude'
+      .form-group
+        = f.label :longitude
+        = f.text_field :longitude, class: 'form-control', id: 'longitude'
+      .form-group
         = f.submit class: "btn btn-primary"
   .col-sm-1
-  .col-sm-6
+  .col-sm-7
     #map-new
-      = map(:center => { :latlng => [9.976733, -84.0088699], :zoom => 17 },
-            :markers => [ {:latlng => [9.976733, -84.0088699] } ],
-            :container_id => 'map-new' )
+
+javascript:
+  $(document).ready(function() {
+    L.mapbox.accessToken = '#{Rails.application.secrets.mapbox_api}';
+    var map = L.mapbox.map('map-new', 'mapbox.streets').setView([9.976733, -84.0088699], 16);
+    map.on('click', function(e) {
+      console.log(e);
+      $('#latitude').val(e.latlng.lat);
+      $('#longitude').val(e.latlng.lng);
+    });
+  });
