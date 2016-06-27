@@ -4,5 +4,5 @@
     #map
 
 javascript:
-  L.mapbox.accessToken = '';
+  L.mapbox.accessToken = '#{Rails.application.secrets.mapbox_api}';
   var map = L.mapbox.map('map', 'mapbox.streets').setView([9.976733, -84.0088699], 16);
