@@ -34,12 +34,12 @@ group :development, :test do
   gem 'mailcatcher'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'faker'
 end
 
 group :test do
   gem 'capybara'
   gem 'database_cleaner'
-  gem 'faker'
 end
 
 group :production do
