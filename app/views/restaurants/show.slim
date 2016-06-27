@@ -12,9 +12,7 @@
     .row.visuals
       .col-sm-offset-1.col-sm-3
         #map-show
-          = map(:center => { :latlng => [9.976733, -84.0088699], :zoom => 17 },
-                :markers => [ {:latlng => [9.976733, -84.0088699] } ],
-                :container_id => 'map-show' )
+
 
       .col-sm-6
         p pics go here
@@ -31,3 +29,9 @@
         ul.sidebar
           li Location: #{@restaurant.location}
           li Cuisine: #{@restaurant.cuisine}
+
+javascript:
+  $(document).ready(function() {
+    L.mapbox.accessToken = '#{Rails.application.secrets.mapbox_api}';
+    var map = L.mapbox.map('map-show', 'mapbox.streets').setView([#{@restaurant.latitude}, #{@restaurant.longitude}], 16);
+  });
