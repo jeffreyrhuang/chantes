@@ -19,6 +19,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'geocoder'
 gem 'slim'
 gem 'font-awesome-rails'
+gem "paperclip", "~> 5.0.0.beta2"
+gem 'aws-sdk', '~> 2.3'
 
 
 group :development do
