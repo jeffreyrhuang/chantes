@@ -1,5 +1,10 @@
 .row
-  h2 align='center' Your Profile
+  .col-sm-3.col-sm-offset-2
+    = image_tag @user.avatar.url(:medium), id: 'user-avatar'
+  .col-sm-7
+    h5 #{@user.email}
+
+.row#user-reviews
   .col-sm-8.col-sm-offset-2
     - if @user.reviews.any?
       h2 Your reviews:
@@ -20,3 +25,5 @@
               = link_to "Delete", restaurant_review_path(review.restaurant_id, review), method: :delete,
                                            data: { confirm: "Are you sure you want to delete the review?"},
                                            class: "btn btn-sm btn-danger"
+    - else
+      p No reviews written yet
