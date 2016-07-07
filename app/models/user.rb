@@ -7,4 +7,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
+
+  validates :first_name, presence: true
+  validates :last_name, presence: true
 end
