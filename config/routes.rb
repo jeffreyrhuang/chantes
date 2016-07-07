@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  resources :users, only: [:show, :edit, :update]
+  resources :users, only: [:show, :update]
 
   root 'static_pages#home'
   get 'about' => 'static_pages#about'
