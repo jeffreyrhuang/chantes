@@ -34,4 +34,5 @@ javascript:
   $(document).ready(function() {
     L.mapbox.accessToken = '#{Rails.application.secrets.mapbox_api || ENV['MAPBOX_API']}';
     var map = L.mapbox.map('map-show', 'mapbox.streets').setView([#{@restaurant.latitude}, #{@restaurant.longitude}], 16);
+    var marker = L.marker([#{@restaurant.latitude}, #{@restaurant.longitude}]).addTo(map);
   });
