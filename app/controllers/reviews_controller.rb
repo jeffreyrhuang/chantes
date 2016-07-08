@@ -6,6 +6,19 @@ class ReviewsController < ApplicationController
     @restaurant = Restaurant.find(params[:restaurant_id])
   end
 
+  def create
+    @review = current_user.reviews.build(review_params)
+    @review.restaurant_id = params[:restaurant_id]
+    if @review.save
+      flash[:success] = 'Review successfully saved'
+      # fix redirect
+      redirect_to root_path
+    else
+      @restaurant = Restaurant.find(params[:restaurant_id])
+      render 'new'
+    end
+  end
+
   def show
 
   end
@@ -23,19 +36,6 @@ class ReviewsController < ApplicationController
       redirect_to user_path(current_user)
     else
       render 'edit'
-    end
-  end
-
-  def create
-    @review = current_user.reviews.build(review_params)
-    @review.restaurant_id = params[:restaurant_id]
-    if @review.save
-      flash[:success] = 'Review successfully saved'
-      # fix redirect
-      redirect_to root_path
-    else
-      @restaurant = Restaurant.find(params[:restaurant_id])
-      render 'new'
     end
   end
 

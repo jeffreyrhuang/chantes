@@ -15,8 +15,10 @@
 
 
       .col-sm-6
-        p pics go here
+        - if @restaurant.photos.any?
 
+        - else
+          p No photos available
 .row
   .review-section
     .row
