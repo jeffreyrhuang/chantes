@@ -17,7 +17,7 @@
 
       .col-sm-6
         - if @restaurant.photos.any?
-
+          = image_tag @restaurant.photos.first.image.url(:medium)
         - else
           p No photos available
 .row
