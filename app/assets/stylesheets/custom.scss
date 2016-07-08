@@ -59,6 +59,9 @@ $navbar-border-color: #177e5d;
   padding-top: 2em;
   margin: 0;
   width: 100%;
+  .action-buttons {
+    #add-photo { margin-left: 1em;}
+  }
   .visuals {
     margin-top: 5em;
     #map-show {
@@ -95,6 +98,13 @@ $navbar-border-color: #177e5d;
 
 #thumbs-up, #thumbs-down {
   margin-right: 1em;
+}
+
+// Photo new
+
+.add-photo-section {
+  margin-top: 3em;
+
 }
 
 // Profile Page

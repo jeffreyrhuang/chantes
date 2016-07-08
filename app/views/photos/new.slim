@@ -1,0 +1,26 @@
+.row
+  .col-sm-8.col-sm-offset-2
+    h5
+      = link_to "#{@restaurant.name}:", @restaurant
+      |  Add photos
+
+.row.add-photo-section
+  .col-sm-4.col-sm-offset-1
+    = form_for @photo, url: restaurant_photos_path(@restaurant, @photo), html: { multipart: true } do |f|
+      .form-group
+        = f.label :image, 'Upload a photo file'
+        = f.file_field :image, class: 'form-control-file'
+      .form-group
+        = f.label :caption
+        = f.text_area :caption, class: 'form-control'
+  .col-sm-1
+  .col-sm-6
+    aside
+      h6 Guidelines:
+      br
+      ul
+        li Please refrain from posting photos that are poorly lit or blurry.
+        li Please keep the photos focused on the business.
+        li Photos must be less than 1 MB in size
+        li Thank you for contributing!
+

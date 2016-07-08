@@ -1,7 +1,8 @@
 class PhotosController < ApplicationController
 
   def new
-    @photo = Photo.new
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    @photo = @restaurant.photos.build
   end
 
   def create
