@@ -16,9 +16,13 @@
           li.nav-item.dropdown
             a#dropdownMenu1.dropdown-toggle.nav-link[type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"]
               | Account
-            .dropdown-menu[aria-labelledby="dropdownMenu1"]
-              = link_to "Profile", current_user, class: 'dropdown-item'
-              = link_to "Settings", '#', class: 'dropdown-item'
+            .dropdown-menu.dropdown-menu-right
+              = link_to current_user, class: 'dropdown-item'
+                i class='fa fa-user' aria-hidden='true'
+                span Profile
+              = link_to '#', class: 'dropdown-item'
+                i class='fa fa-cog' aria-hidden='true'
+                span Settings
               .dropdown-divider
               = link_to "Log out", destroy_user_session_path, method: "delete", class: 'dropdown-item'
         - else

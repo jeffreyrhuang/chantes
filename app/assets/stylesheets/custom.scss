@@ -18,6 +18,11 @@ $navbar-border-color: #177e5d;
 .navbar {
   background-color: $navbar-color;
   border-bottom: 1px solid $navbar-border-color;
+  .dropdown-menu {
+    span {
+      padding-left: 1em;
+    }
+  }
 }
 
 // Home
@@ -102,6 +107,21 @@ $navbar-border-color: #177e5d;
 
 #user-reviews {
   margin-top: 5em;
+  width: 100%;
+}
+
+.profile-stats {
+  border: 1px solid black;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 1em;
+  padding: .5em .75em;
+  i {
+    margin-left: 1em;
+  }
+  span {
+    padding: .5em;
+  }
 }
 
 // Footer
