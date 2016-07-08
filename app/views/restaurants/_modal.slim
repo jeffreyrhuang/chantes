@@ -1,0 +1,30 @@
+.modal.fade id='photo-index' tabindex='-1' role='dialog'
+  .modal-dialog.modal-lg role='document'
+    .modal-content
+      .modal-header
+        button type='button' class='close' data-dismiss='modal' aria-label='Close'
+          span aria-hidden='true' &times;
+        h4 class='modal-title'
+      .modal-body
+        .carousel.slide id='carousel-example-generic' data-ride='carousel'
+          ol class='carousel-indicators'
+            li data-target='#carousel-example-generic' data-slide-to='0' class='active'
+            li data-target='#carousel-example-generic' data-slide-to='1'
+            li data-target='#carousel-example-generic' data-slide-to='2'
+          .carousel-inner role='listbox'
+            .carousel-item class='active' 
+              = image_tag @restaurant.photos.first.image.url(:carousel)
+              .carousel-caption
+                | #{@restaurant.photos.first.caption}
+            .carousel-item
+              = image_tag @restaurant.photos.last.image.url(:carousel)
+              .carousel-caption
+                | #{@restaurant.photos.last.caption}
+            .carousel-item
+              img data-src='...'
+          a class='left carousel-control' href='#carousel-example-generic' role='button' data-slide='prev'
+            span.icon-prev aria-hidden='true'
+            span.sr-only Previous
+          a class='right carousel-control' href='#carousel-example-generic' role='button' data-slide='next'
+            span.icon-next aria-hidden='true'
+            span.sr-only Next
