@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :restaurants do
     resources :reviews
-    resources :photos
+    resources :photos, only: [:new, :create, :destroy]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
