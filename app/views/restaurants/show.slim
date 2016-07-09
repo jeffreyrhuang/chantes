@@ -1,5 +1,8 @@
 = render 'modal'
 
+- (0...3).each do |n|
+  p #{n}
+
 .row
   .header-section
     .row
@@ -42,4 +45,10 @@ javascript:
     L.mapbox.accessToken = '#{Rails.application.secrets.mapbox_api || ENV['MAPBOX_API']}';
     var map = L.mapbox.map('map-show', 'mapbox.streets').setView([#{@restaurant.latitude}, #{@restaurant.longitude}], 16);
     var marker = L.marker([#{@restaurant.latitude}, #{@restaurant.longitude}]).addTo(map);
+
+    // For carousel options:
+    $('.carousel').carousel({
+      pause: true,
+      interval: false
+    });
   });
