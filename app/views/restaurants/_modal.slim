@@ -21,7 +21,7 @@
               .carousel-item
                 = image_tag photo.image.url(:carousel)
                 .carousel-caption
-                  | #{photo.caption}
+                  p #{photo.caption}
 
           a class='left carousel-control' href='#main-carousel' role='button' data-slide='prev'
             span.icon-prev aria-hidden='true'

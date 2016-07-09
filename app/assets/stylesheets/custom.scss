@@ -96,6 +96,19 @@ $navbar-border-color: #177e5d;
   }
 }
 
+// modal carousel
+
+.carousel-inner {
+  height: 500px;
+  .carousel-item {
+    background-color: black;
+  }
+  img {
+    margin: auto;
+    min-height: 500px;
+  }
+}
+
 #thumbs-up, #thumbs-down {
   margin-right: 1em;
 }
