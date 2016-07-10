@@ -9,6 +9,11 @@ Rails.application.routes.draw do
   resources :restaurants do
     resources :reviews
     resources :photos, only: [:new, :create, :destroy]
+    member do
+      put 'like', to: 'restaurants#like'
+      put 'dislike', to: 'restaurants#dislike' 
+    end
+
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

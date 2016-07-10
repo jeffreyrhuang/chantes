@@ -60,6 +60,13 @@ $navbar-border-color: #177e5d;
   margin: 0;
   width: 100%;
   .action-buttons {
+    .rating-box {
+      margin-bottom: 1em;
+      display: inline-block;
+      #thumbs-down {
+        margin-left: 1em;
+      }
+    }
     #add-photo { margin-left: 1em;}
   }
   .visuals {

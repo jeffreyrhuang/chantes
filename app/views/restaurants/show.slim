@@ -3,14 +3,23 @@
 .row
   .header-section
     .row
-      .col-sm-offset-1.col-sm-5
+      .col-sm-offset-1.col-sm-4
         h2 = @restaurant.name
-      .col-sm-6
+      .col-sm-7
         .action-buttons
-          i.fa.fa-thumbs-o-up.fa-2x id='thumbs-up'
-          i.fa.fa-thumbs-o-down.fa-2x id='thumbs-down'
-          = link_to "Write review", new_restaurant_review_path(@restaurant), class: "btn btn-primary btn-lg"
-          = link_to "Add Photo", new_restaurant_photo_path(@restaurant), class: "btn btn-secondary", id: "add-photo"
+          .rating-box
+      
+            = link_to like_restaurant_path(@restaurant), method: :put
+              i.fa.fa-thumbs-o-up.fa-2x id='thumbs-up'
+            = @restaurant.get_likes.size
+        
+            = link_to dislike_restaurant_path(@restaurant), method: :put, id: 'thumbs-down'
+              i.fa.fa-thumbs-o-down.fa-2x id='thumbs-down'
+            = @restaurant.get_dislikes.size
+            
+          .review-upload-box
+            = link_to "Write review", new_restaurant_review_path(@restaurant), class: "btn btn-primary btn-lg"
+            = link_to "Add Photo", new_restaurant_photo_path(@restaurant), class: "btn btn-secondary", id: "add-photo"
 
     .row.visuals
       .col-sm-offset-1.col-sm-3
